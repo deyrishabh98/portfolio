@@ -31,6 +31,34 @@ body {
   50% { transform: translateX(-4px)}
   25% { transform: translateX(4px)}
 }
+.wrapper {
+  height: 100vh;
+  /*This part is important for centering*/
+  display: grid;
+  place-items: center;
+}
+
+.typing-demo {
+  width: 22ch;
+  animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 2em;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
 body.active {
   overflow: hidden;
   z-index: -1;
@@ -242,11 +270,12 @@ footer {
   height: 100vh;
   min-height: 500px;
   max-height: 1080px;
-  background: url(../images/lead-bg.jpg);
+  background: url(../images/coding.png);
   background-color: black;
   background-size: cover;
   padding: 15px;
   overflow: hidden;
+  background-attachment: fixed;
 }
 #lead-content {
   position: absolute;
